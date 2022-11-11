@@ -1,0 +1,98 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+$grid-breakpoints: (
+        xs: 0,
+        sm: 360px,
+        md: 600px,
+        lg: 800px,
+        xl: 1024px,
+        xxl: 1288px
+);
+
+$container-max-widths: (
+        sm: 100%,
+        md: 600px,
+        lg: 800px,
+        xl: 1024px,
+        xxl: 1288px
+);
+
+@import "bootstrap";
+
+$body: rgb(246 248 247);
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: $body;
+  margin-top: 50px;
+}
+
+.container {
+  padding-right: calc(var(--bs-gutter-x) * 0.83334);
+  padding-left: calc(var(--bs-gutter-x) * 0.83334);
+  @media (max-width: 1024px) {
+    padding-right: calc(var(--bs-gutter-x) * 0.66667);
+    padding-left: calc(var(--bs-gutter-x) * 0.66667);
+  }
+  @media (max-width: 800px) {
+    padding-right: calc(var(--bs-gutter-x) * 0.75);
+    padding-left: calc(var(--bs-gutter-x) * 0.75);
+  }
+  @media (max-width: 600px) {
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+  }
+}
+
+img {
+  width: 100%;
+  aspect-ratio: 2 / 1.125;
+  object-fit: cover;
+}
+
+.cards {
+  padding-top: 50px;
+  padding-bottom: 34px;
+}
+
+.card {
+  &__title {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  &__content {
+    display: grid;
+    gap: 16px;
+    & > * {
+      margin-bottom: 0;
+      color: rgb(43 83 98);
+    }
+  }
+  &__description {
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  &__price {
+    font-size: 20px;
+    font-weight: 600;
+    small {
+      font-size: 13px;
+      font-weight: 500;
+    }
+  }
+  &__button {
+    color: rgb(82 164 147);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    width: fit-content;
+    padding-right: 18px;
+    &:after {
+      content: "\a0\02192";
+      position: absolute;
+      right: 0;
+    }
+  }
+}
